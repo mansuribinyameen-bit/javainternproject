@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="${title} != null ? ${title} : 'Online Bookstore'">Online Bookstore</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}" />
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Online Bookstore</h1>
+        <nav>
+            <a th:href="@{/books}">Books</a>
+            <a th:href="@{/cart}">Cart</a>
+            <a th:href="@{/orders}">Orders</a>
+            <a th:href="@{/register}">Register</a>
+            <a th:href="@{/login}">Login</a>
+        </nav>
+    </header>
+
+    <main th:fragment="content">
+        <!-- page content -->
+    </main>
+
+    <footer>
+        <small>Demo system</small>
+    </footer>
+</div>
+</body>
+</html>
+
+

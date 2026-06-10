@@ -1,0 +1,8 @@
+body { font-family: Arial, sans-serif; }
+.container { max-width: 900px; margin: 0 auto; padding: 16px; }
+nav a { margin-right: 10px; }
+.error { color: #b00020; margin: 4px 0; }
+.message { color: #0b7285; margin: 4px 0; }
+input { display: block; margin-bottom: 10px; padding: 8px; width: 100%; max-width: 360px; }
+button { padding: 10px 16px; }
+

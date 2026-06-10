@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Books</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}" />
+</head>
+<body>
+<div class="container">
+
+    <h2>Books</h2>
+
+    <form th:action="@{/books}" method="get">
+        <input type="text" name="q" placeholder="Search by title or author" th:value="${query}"/>
+        <button type="submit">Search</button>
+    </form>
+
+    <div style="margin-top:16px;">
+        <div th:if="${books == null || #lists.isEmpty(books)}">No books found.</div>
+
+        <div th:each="b : ${books}" style="border:1px solid #ddd; padding:12px; margin:10px 0;">
+            <h3 th:text="${b.title}"></h3>
+            <p><b>Author:</b> <span th:text="${b.author}"></span></p>
+            <p th:if="${b.description != null}" th:text="${b.description}"></p>
+            <p><b>Price:</b> <span th:text="${b.price}"></span></p>
+            <p><b>Stock:</b> <span th:text="${b.stock}"></span></p>
+            <p>
+                <!-- Cart add placeholder (cart feature will come next) -->
+                <button type="button" disabled>Add to cart (coming soon)</button>
+            </p>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
+
